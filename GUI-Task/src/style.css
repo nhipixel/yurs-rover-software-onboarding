@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full w-full;
+  }
+
+  #root {
+    @apply grid place-items-center;
+  }
+
+  canvas {
+    @apply block h-full w-full;
+  }
+}
+
+body {
+  margin: 0;
+  background: #11151b;
+  color: #f4f7fb;
+  font-family: system-ui, sans-serif;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: minmax(360px, 1fr) auto;
+  gap: 1rem;
+  width: min(78vw, 1100px);
+  height: min(78vh, 760px);
+  min-height: 520px;
+}
+
+.viewer,
+.viewer-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.viewer {
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.controls {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #20242b;
+}
+
+.controls h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.controls input[type='range'] {
+  width: 100%;
+}
