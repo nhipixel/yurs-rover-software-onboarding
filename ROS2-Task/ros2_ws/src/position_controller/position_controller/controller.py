@@ -18,8 +18,9 @@ class PositionController(Node):
         self.emergency_stop_active = message.data
 
     def on_movement(self, command):
-        self.x += command.linear.x
-        self.y += command.linear.y
+        if not self.emergency_stop_active:
+            self.x += command.linear.x
+            self.y += command.linear.y
         position = Point()
         position.x = self.x
         position.y = self.y
