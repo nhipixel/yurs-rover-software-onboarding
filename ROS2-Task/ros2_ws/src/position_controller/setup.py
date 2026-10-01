@@ -13,10 +13,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='root',
-    maintainer_email='root@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='Nhi Ngo',
+    maintainer_email='nhiyngo0@gmail.com',
+    description='Tracks a clamped 2D position from movement commands, gated by an emergency stop.',
+    license='Apache-2.0',
     extras_require={
         'test': [
             'pytest',

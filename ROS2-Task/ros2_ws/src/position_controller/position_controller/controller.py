@@ -13,14 +13,15 @@ class PositionController(Node):
         self.y = 0.0
         self.publisher = self.create_publisher(Point, "position", 10)
         self.create_subscription(Twist, "movement_command", self.on_movement, 10)
+        self.field_limit = 10.0
 
     def on_estop(self, message):
         self.emergency_stop_active = message.data
 
     def on_movement(self, command):
         if not self.emergency_stop_active:
-            self.x += command.linear.x
-            self.y += command.linear.y
+            self.x = max(-self.field_limit, min(self.field_limit, self.x + command.linear.x))
+            self.y = max(-self.field_limit, min(self.field_limit, self.y + command.linear.y))
         position = Point()
         position.x = self.x
         position.y = self.y

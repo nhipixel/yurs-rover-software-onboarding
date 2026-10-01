@@ -3,9 +3,9 @@
 <package format="3">
   <name>position_controller</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="root@todo.todo">root</maintainer>
-  <license>TODO: License declaration</license>
+  <description>Tracks a clamped 2D position from movement commands, gated by an emergency stop.</description>
+  <maintainer email="nhiyngo0@gmail.com">Nhi Ngo</maintainer>
+  <license>Apache-2.0</license>
 
   <depend>rclpy</depend>
   <depend>geometry_msgs</depend>
